@@ -26,4 +26,15 @@ class App extends React.Component {
 		this.setState({recipes: data, currentRecipe: data[0]});
 	}
 
+	render() {
+		return (
+			<div>
+				<h1>Recipe Name: {this.state.currentRecipe.name}</h1>
+				<h1>Recipe Description: {this.state.currentRecipe.description}</h1>
+			</div>
+		)
+	}
 }
+
+//export App
+export default App
