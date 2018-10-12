@@ -3,7 +3,8 @@
 import React from 'react';
 // Import axios as an http library
 import axios from 'axios';
-import Recipes from './Recipes'
+import Recipes from './Recipes';
+import RecipeForm from './RecipeForm';
 
 class App extends React.Component {
 	//constructor method that will set up our initial state
@@ -29,7 +30,10 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<Recipes recipes={this.state.recipes}/>
+			<div>
+				<Recipes recipes={this.state.recipes}/>
+				<RecipeForm />
+			</div>
 		)
 	}
 
