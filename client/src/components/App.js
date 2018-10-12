@@ -3,6 +3,7 @@
 import React from 'react';
 // Import axios as an http library
 import axios from 'axios';
+import Recipes from './Recipes'
 
 class App extends React.Component {
 	//constructor method that will set up our initial state
@@ -28,12 +29,10 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Recipe Name: {this.state.currentRecipe.name}</h1>
-				<h1>Recipe Description: {this.state.currentRecipe.description}</h1>
-			</div>
+			<Recipes recipes={this.state.recipes}/>
 		)
 	}
+
 }
 
 //export App
