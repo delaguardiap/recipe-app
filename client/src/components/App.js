@@ -14,6 +14,7 @@ class App extends React.Component {
 			recipes: [],
 			currentRecipe: {}
 		}
+		this.createRecipe = this.createRecipe.bind(this);
 	}
 
 	//Life cycle method that will be executed as soon
@@ -28,11 +29,16 @@ class App extends React.Component {
 		this.setState({recipes: data, currentRecipe: data[0]});
 	}
 
+	async createRecipe(name, ingredients, description) {
+		let { data } = await axios.post('/recipes', {name, ingredients, description});
+		this.setState({recipes: data});
+	}
+
 	render() {
 		return (
 			<div>
 				<Recipes recipes={this.state.recipes}/>
-				<RecipeForm />
+				<RecipeForm createRecipe={this.createRecipe}/>
 			</div>
 		)
 	}
