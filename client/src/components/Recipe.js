@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Recipe extends React.Component {
+	//This component displays data that was passed to it via props.
 	render() {
 		return(
 			<div className="recipe">
